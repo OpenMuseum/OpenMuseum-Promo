@@ -20,7 +20,7 @@ $(window).load(function() {
         // Plugin setup
         
         // Navigation
-        anchors: ['welcome', 'about', 'portfolio', 'pricing', 'team', 'features', 'contact'],
+        anchors: ['welcome', 'idea', 'projects', 'team', 'partners', 'contact'],
         menu: '.fullpage__nav',
         slidesNavigation: 'true',
 

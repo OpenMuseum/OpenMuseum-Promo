@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="ico/favicon.ico">
 
     <title>Саратовская крепость | Рассредоточенный музей истории города</title>
 
     <!-- CSS Plugins -->
+    <link href="css/plugins/jquery.fullPage.css" rel="stylesheet">
     <link href="css/plugins/animate.css" rel="stylesheet">
     <link href="css/plugins/lightbox.css" rel="stylesheet">
     <link href="fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -32,32 +33,42 @@
     <![endif]-->
 </head>
 
-<body class="classic" data-spy="scroll" data-target=".scrollspy_menu">
+<body class="sliding-image">
 
 <!-- PRELOADER
 ============================== -->
 <div class="preloader">
-    <img src="img/preloader.gif" alt="Loading..." class="preloader__img">
+    <img src="img/preloader.gif" alt="Загрузка..." class="preloader__img">
 </div>
+
+
+<!-- BACKGROUND PATTERN
+============================== -->
+<div class="bg-pattern"></div>
+
+
+<!-- BACKSTRETCH CAROUSEL
+============================== -->
+<div class="backstretch-carousel"></div>
 
 
 <!-- NAVBAR
 ============================== -->
-<div class="navbar navbar-default navbar__initial navbar-fixed-top scrollspy_menu" role="navigation">
+<div class="navbar navbar-default navbar__initial navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">Свернуть навигацию</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
         </div>
         <div class="navbar-collapse collapse">
-            <ul class="fullpage__nav nav navbar-nav navbar-right">
+            <ul class="fullpage__nav nav navbar-nav navbar-left">
                 <li><a href="#welcome">Начало</a></li>
-                <li><a href="#about">О проекте</a></li>
-                <li><a href="#plan">План работ</a></li>
+                <li><a href="#idea">Идея</a></li>
+                <li><a href="#projects">Проекты</a></li>
                 <li><a href="#team">Команда</a></li>
                 <li><a href="#partners">Партнёры</a></li>
                 <li><a href="#contact">Рассылка</a></li>
@@ -81,39 +92,38 @@
 </div>
 
 <!-- Sidebar menu -->
-<div class="sidebar__menu sidebar__menu_hidden scrollspy_menu">
+<div class="sidebar__menu sidebar__menu_hidden">
 
     <!-- Sidebar button close -->
     <div class="sidebar__btn sidebar__btn_close">
-        <span class="sidebar-btn__caption">Menu</span>
-        <span class="oi oi-menu sidebar-btn__icon sidebar-btn-icon__unhover " title="Close menu"
+        <span class="sidebar-btn__caption">Меню</span>
+        <span class="oi oi-menu sidebar-btn__icon sidebar-btn-icon__unhover " title="Закрыть меню"
               aria-hidden="true"></span>
-        <span class="oi oi-arrow-right sidebar-btn__icon sidebar-btn-icon__hover" title="Close menu"
+        <span class="oi oi-arrow-right sidebar-btn__icon sidebar-btn-icon__hover" title="Закрыть меню"
               aria-hidden="true"></span>
     </div>
 
-    <!-- Sidebar brand name -->
-    <div class="sidebar-menu__brand">Wolfram 2.2</div>
-
     <!-- Sidebar links -->
     <ul class="fullpage__nav sidebar-menu__ul nav">
-        <li><a href="#welcome">Welcome</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#portfolio">Portfolio</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#team">Team</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#welcome">Начало</a></li>
+        <li><a href="#idea">Идея</a></li>
+        <li><a href="#projects">Проекты</a></li>
+        <li><a href="#team">Команда</a></li>
+        <li><a href="#partners">Партнёры</a></li>
+        <li><a href="#contact">Рассылка</a></li>
     </ul>
 
 </div>
 <!-- / .sidebar-menu__ul -->
 
 
-<!-- WELCOME
+<!-- FULLPAGE.JS CONTAINER
 ============================== -->
-<div class="welcome_classic" id="welcome">
-    <div class="welcome-classic__inner">
+<div id="fullpage">
+
+    <!-- WELCOME SCREEN
+    ============================== -->
+    <div class="site-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
@@ -125,20 +135,20 @@
 
                     <!-- Heading -->
                     <h1 class="heading heading_lg">
-                        <span class="text-primary">Саратовская крепость</span>
+                        <span class="text-primary header">Саратовская крепость</span>
                     </h1>
 
                     <!-- Sub heading -->
-                    <p class="heading__sub">
+                    <p class="heading__sub header-description">
                         Рассредоточенный музей истории города
                     </p>
 
                     <!-- Button -->
                     <div class="text-center">
 
-                        <a href="#about" class="btn btn-xl btn-primary">
-                            <span class="oi oi-arrow-right" title="Find out more" aria-hidden="true"></span>
-                            <span>Наша история</span>
+                        <a href="#idea" class="btn btn-xl btn-primary">
+                            <span class="oi oi-arrow-right" title="Подробнее" aria-hidden="true"></span>
+                            <span>Подробнее</span>
                         </a>
 
                     </div>
@@ -147,536 +157,538 @@
             </div>
             <!-- / .row -->
         </div>
+    </div>
+
+    <div class="site-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="row">
+                        <!-- Heading -->
+                        <h1 class="heading">
+                            О <span class="text-primary">проекте</span>
+                        </h1>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-7 col-sm-7 col-md-7">
+                            <div class="embed-responsive embed-responsive-16by9">
+                                <video autoplay loop class="embed-responsive-item">
+                                    <source src="images/video.mp4" type="video/mp4">
+                                </video>
+                            </div>
+                        </div>
+                        <div class="col-xs-5 col-sm-5 col-md-5">
+                            <div class="lead text-center text">
+                                <em>
+                                    Проект "Саратовская крепость: рассредоточенный музей истории города" призван
+                                    превратить самую
+                                    старую часть города, где в XVII веке был построен «третий Саратов», в своеобразный
+                                    музей истории
+                                    города – музей под открытым небом, смотрителями-проводниками-хранителями и
+                                    владельцами которого
+                                    станут сами жители.
+                                </em>
+                            </div>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-10 col-sm-6 col-md-6 col-lg-6">
+                            <!-- Sub heading -->
+                            <p class="lead text">
+                                Величайшей ценностью места является сетка улиц, подсказывающая, как физика местности
+                                диктовала геометрию застройки. Названия улиц – готовое сообщение: Валовая – место
+                                крепостного вала, Северная – северный угол крепости, Соляная – соляные амбары, Тулупная
+                                и Кузнечная – ремесленные слободки, Московская – дорога на Москву. Граница, проходившая
+                                по Валовой-Октябрьской-Набережной – один из главных маршрутов.<br/>
+                                <br/>Итогом работы станет сайт – общедоступная база данных, которая позволит погружаться
+                                в историческое прошлое гостям и жителям города, а всем инициативным и предприимчивым
+                                гражданам даст возможность конструировать будущее.
+                            </p>
+                        </div>
+
+                        <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4">
+                            <img src="images/map.jpg" class="img-responsive" title="Саратовская крепость"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- / .container -->
     </div>
-    <!-- / .classic-welcome__inner -->
-</div>
-<!-- / .welcome_classic -->
 
-<!-- ABOUT
-============================== -->
-<div class="site-wrapper" id="about">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
+    <!-- PROJECTS SCREEN
+    ============================== -->
+    <div class="site-wrapper">
+        <div class="site-wrapper__slide site-wrapper__slide_1">
+            <div class="container">
                 <div class="row">
+                    <div class="col-xs-12">
+
+                        <!-- Pre heading -->
+                        <p class="heading__pre">
+                            #1
+                        </p>
+
+                        <!-- Heading -->
+                        <h1 class="heading heading_lg">
+                            <span class="text-primary">Порталы</span> истории
+                        </h1>
+
+                        <!-- Sub heading -->
+                        <p class="heading__sub">
+                            Четыре «проезжих» арки на Набережной Космонавтов в домах № 7/8, 6, 5, 4 – четыре портала, с
+                            помощью которых можно осуществить путешествие в прошлое Саратова.
+                            Каждая арка будет отреставрирована и станет напоминанием о прежних домах, церквях и людях
+                            Саратова.
+                        </p>
+
+                    </div>
+                </div>
+                <!-- / .row -->
+            </div>
+            <!-- / .container -->
+        </div>
+        <!-- / .site-wrapper__slide -->
+
+
+        <!-- Slide #1 -->
+        <div class="site-wrapper__slide site-wrapper__slide_2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <!-- Pre heading -->
+                        <p class="heading__pre">
+                            #2
+                        </p>
+
+                        <!-- Heading -->
+                        <h1 class="heading heading_lg">
+                            Строим <span class="text-primary">крепость</span> #2
+                        </h1>
+
+                        <!-- Sub heading -->
+                        <p class="heading__sub">
+                            Картонная крепость для музея ГТРК "Саратов", созданная в рамках
+                            познавательно-развлекательной «Телешколы» на уроке технологии с командой проекта
+                            «Саратовская крепость: рассредоточенный музей истории города» и Натальей Лобовой
+                        </p>
+
+                    </div>
+                </div>
+                <!-- / .row -->
+            </div>
+            <!-- / .container -->
+        </div>
+        <!-- / .site-wrapper__slide -->
+
+        <!-- Slide #2 -->
+        <div class="site-wrapper__slide site-wrapper__slide_3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+
+                        <!-- Pre heading -->
+                        <p class="heading__pre">
+                            #3
+                        </p>
+
+                        <!-- Heading -->
+                        <h1 class="heading heading_lg">
+                            Строим <span class="text-primary">крепость</span> #1
+                        </h1>
+
+                        <!-- Sub heading -->
+                        <p class="heading__sub">
+                            Акция для детей и взрослых в рамках празднования Дня города
+                        </p>
+
+                    </div>
+                </div>
+                <!-- / .row -->
+            </div>
+            <!-- / .container -->
+        </div>
+        <!-- / .site-wrapper__slide -->
+    </div>
+    <!-- / .site-wrapper -->
+
+    <!-- TEAM SCREEN
+    ============================== -->
+    <div class="site-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
                     <!-- Heading -->
                     <h1 class="heading">
-                        О <span class="text-primary">проекте</span>
+                        They've <span class="text-primary">made</span> this possible
                     </h1>
+
+                    <!-- Sub heading -->
+                    <p class="heading__sub">
+                        A team of hard-working enthusiastic people who helped this product come to life.
+                    </p>
+
                 </div>
-                <div class="row">
-                    <div class="col-xs-7 col-sm-7 col-md-7">
-                        <div class="embed-responsive embed-responsive-16by9">
-                            <video autoplay loop class="embed-responsive-item">
-                                <source src="images/video.mp4" type="video/mp4">
-                            </video>
+            </div>
+            <!-- / .row -->
+            <div class="row">
+                <div class="col-sm-3">
+
+                    <!-- Team member -->
+                    <div class="team__member">
+
+                        <!-- Avatar -->
+                        <div class="team-member__avatar team__member_chief">
+                            <img class="img-responsive" src="img/photo_1.jpg" alt="...">
                         </div>
+
+                        <!-- Info -->
+                        <h4 class="team-member__name">Игорь Сорокин</h4>
+
+                        <p class="team-member__info">
+                            Руководитель проекта
+                        </p>
+
                     </div>
-                    <div class="col-xs-5 col-sm-5 col-md-5">
-                        <div class="lead text-center text">
-                            <em>
-                                Проект "Саратовская крепость: рассредоточенный музей истории города" призван превратить самую
-                                старую часть города, где в XVII веке был построен «третий Саратов», в своеобразный музей истории
-                                города – музей под открытым небом, смотрителями-проводниками-хранителями и владельцами которого
-                                станут сами жители.
-                            </em>
+                    <!-- / .team__member -->
+
+                </div>
+
+                <div class="col-sm-3">
+
+                    <!-- Team member -->
+                    <div class="team__member">
+
+                        <!-- Avatar -->
+                        <div class="team-member__avatar">
+                            <img class="img-responsive" src="img/photo_3.jpg" alt="...">
                         </div>
-                    </div>
-                </div>
-                <hr/>
-                <div class="row">
-                    <div class="col-lg-offset-2 col-md-offset-2 col-sm-offset-2 col-xs-10 col-sm-6 col-md-6 col-lg-6">
-                        <!-- Sub heading -->
-                        <p class="lead text">
-                            Величайшей ценностью места является сетка улиц, подсказывающая, как физика местности диктовала геометрию застройки. Названия улиц – готовое сообщение: Валовая – место крепостного вала, Северная – северный угол крепости, Соляная – соляные амбары, Тулупная и Кузнечная – ремесленные слободки, Московская – дорога на Москву. Граница, проходившая по Валовой-Октябрьской-Набережной – один из главных маршрутов.<br/>
-                            <br/>Итогом работы станет сайт – общедоступная база данных, которая позволит погружаться в историческое прошлое гостям и жителям города, а всем инициативным и предприимчивым гражданам даст возможность конструировать будущее.
-                        </p>
-                    </div>
 
-                    <div class="col-xs-2 col-sm-4 col-md-4 col-lg-4">
-                        <img src="images/map.jpg" class="img-responsive" title="Саратовская крепость" />
+                        <!-- Info -->
+                        <h4 class="team-member__name">Андрей Ботов</h4>
+
+                        <p class="team-member__info">Архитектор</p>
+
                     </div>
+                    <!-- / .team__member -->
+
+                </div>
+
+                <div class="col-sm-3">
+
+                    <!-- Team member -->
+                    <div class="team__member">
+
+                        <!-- Avatar -->
+                        <div class="team-member__avatar">
+                            <img class="img-responsive" src="img/photo_2.jpg" alt="...">
+                        </div>
+
+                        <!-- Info -->
+                        <h4 class="team-member__name">Анастасия Тарасова</h4>
+
+                        <p class="team-member__info">Художник</p>
+
+                    </div>
+                    <!-- / .team__member -->
+
+                </div>
+                <div class="col-sm-3">
+
+                    <!-- Team member -->
+                    <div class="team__member">
+
+                        <!-- Avatar -->
+                        <div class="team-member__avatar">
+                            <img class="img-responsive" src="img/photo_2.jpg" alt="...">
+                        </div>
+
+                        <!-- Info -->
+                        <h4 class="team-member__name">Ольга Руднева</h4>
+
+                        <p class="team-member__info">Менеджер проекта</p>
+                    </div>
+                    <!-- / .team__member -->
+
                 </div>
             </div>
+            <div class="row">
+
+                <div class="col-sm-3">
+
+                    <!-- Team member -->
+                    <div class="team__member">
+
+                        <!-- Avatar -->
+                        <div class="team-member__avatar">
+                            <img class="img-responsive" src="img/photo_3.jpg" alt="...">
+                        </div>
+
+                        <!-- Info -->
+                        <h4 class="team-member__name">Алексей Кашанин</h4>
+
+                        <p class="team-member__info">Архитектор</p>
+                    </div>
+                    <!-- / .team__member -->
+
+                </div>
+
+                <div class="col-sm-3">
+
+                    <!-- Team member -->
+                    <div class="team__member">
+
+                        <!-- Avatar -->
+                        <div class="team-member__avatar">
+                            <img class="img-responsive" src="img/photo_2.jpg" alt="...">
+                        </div>
+
+                        <!-- Info -->
+                        <h4 class="team-member__name">Анна Кашанина</h4>
+
+                        <p class="team-member__info">Архитектор</p>
+                    </div>
+                    <!-- / .team__member -->
+
+                </div>
+
+                <div class="col-sm-3">
+
+                    <!-- Team member -->
+                    <div class="team__member">
+
+                        <!-- Avatar -->
+                        <div class="team-member__avatar">
+                            <img class="img-responsive" src="img/photo_2.jpg" alt="...">
+                        </div>
+
+                        <!-- Info -->
+                        <h4 class="team-member__name">Мария Друзина</h4>
+
+                        <p class="team-member__info">Программист</p>
+
+                    </div>
+                    <!-- / .team__member -->
+
+                </div>
+
+                <div class="col-sm-3">
+
+                    <!-- Team member -->
+                    <div class="team__member">
+
+                        <!-- Avatar -->
+                        <div class="team-member__avatar">
+                            <img class="img-responsive" src="img/photo_3.jpg" alt="...">
+                        </div>
+
+                        <!-- Info -->
+                        <h4 class="team-member__name">Антон Хействер</h4>
+
+                        <p class="team-member__info">Программист</p>
+
+                    </div>
+                    <!-- / .team__member -->
+
+                </div>
+            </div>
+            <!-- / .row -->
         </div>
     </div>
-    <!-- / .container -->
-</div>
-<!-- / .site-wrapper_classic -->
+    <!-- / .site-wrapper -->
 
-<!-- FEATURES
-============================== -->
-<div class="site-wrapper" id="plan">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
+    <!-- PARTNERS
+    ============================== -->
+    <div class="site-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
 
-                <!-- Heading -->
-                <h1 class="heading">
-                    <span class="text-primary">План</span> работ
-                </h1>
+                    <!-- Heading -->
+                    <h1 class="heading">
+                        Наши <span class="text-primary">партнёры</span>
+                    </h1>
 
-                <!-- Sub heading -->
-                <p class="heading__sub">
-                    Even more reasons to purchase this template. More to come with a future update.
-                </p>
+                    <!-- Sub heading -->
+                    <p class="heading__sub">
+                        Three pricing plans to fit a project of any size. Painless refund guaranteed.
+                    </p>
 
-            </div>
-        </div>
-        <!-- / .row -->
-        <div class="row">
-            <div class="col-sm-6 col-md-5 col-md-offset-1">
-
-                <!-- Features item -->
-                <div class="features__item">
-
-                    <!-- Title -->
-                    <h3 class="features-item__title">
-                        <span class="text-primary">01.</span>
-                        База данных
-                    </h3>
-
-                    <!-- Summary -->
-                    <div class="features-item__summary">
-                        Базы данных городских «музейных историй», сведений о территории и памятника первоначального Саратова–в открытом доступе;
-                    </div>
                 </div>
-                <!-- / .features__item -->
-
             </div>
-            <div class="col-sm-6 col-md-5">
+            <!-- / .row -->
+            <div class="row">
+                <div class="col-sm-4">
 
-                <!-- Features item -->
-                <div class="features__item">
+                    <!-- Pricing item -->
+                    <div class="pricing__item">
 
-                    <!-- Title -->
-                    <h3 class="features-item__title">
-                        <span class="text-primary">02.</span>
-                        Карта
-                    </h3>
+                        <!-- Price -->
+                        <div class="pricing-item__price">
+                            <img height="100" src="images/potanin.jpg"/>
+                        </div>
 
-                    <!-- Summary -->
-                    <div class="features-item__summary">
-                        Рукотворная карта-путеводитель;
+                        <!-- Pricing body -->
+                        <div class="pricing-item__body">
+                            <p class="pricing-item-body__content">
+                                Фонд проводит долгосрочные стипендиальные и грантовые программы, адресованные
+                                талантливым студентам и преподавателям ведущих государственных и негосударственных вузов
+                                России, музейным специалистам, профессионалам спортивной отрасли, специалистам по
+                                созданию и развитию эндаументов.
+                            </p>
+                        </div>
+
                     </div>
+                    <!-- / .pricing__item -->
+
                 </div>
-                <!-- / .features__item -->
+                <div class="col-sm-4">
 
-            </div>
-        </div>
-        <!-- / .row -->
-        <div class="row">
-            <div class="col-sm-6 col-md-5 col-md-offset-1">
+                    <!-- Pricing item -->
+                    <div class="pricing__item">
 
-                <!-- Features item -->
-                <div class="features__item">
+                        <!-- Price -->
+                        <div class="pricing-item__price">
+                            <img height="100" src="images/mm.jpg"/>
+                        </div>
 
-                    <!-- Title -->
-                    <h3 class="features-item__title">
-                        <span class="text-primary">03.</span>
-                        Физические объекты
-                    </h3>
+                        <!-- Pricing body -->
+                        <div class="pricing-item__body">
+                            <p class="pricing-item-body__content">
+                                Фонд выдает гранты сотрудникам музеев РФ на реализацию современных музейных проектов.
+                                Важная составляющая программы - семинар для победителей, дающий возможность
+                                познакомиться с новыми музейными технологиями, подходами и форматами.
+                            </p>
+                        </div>
 
-                    <!-- Summary -->
-                    <div class="features-item__summary">
-                        Показательные объекты будущего рассредоточенного музея истории города (фреска, граффити, светопроекция, контурное обозначение утраченного, тематическое кафе).
                     </div>
-                </div>
-                <!-- / .features__item -->
+                    <!-- / .pricing__item -->
 
+                </div>
+                <div class="col-sm-4">
+
+                    <!-- Pricing item -->
+                    <div class="pricing__item">
+
+                        <!-- Price -->
+                        <div class="pricing-item__price">
+                            <img height="100" src="images/gorod.png"/>
+                        </div>
+
+                        <!-- Pricing body -->
+                        <div class="pricing-item__body">
+                            <p class="pricing-item-body__content">
+                                Vivamus posuere ut est at gravida. Pellentesque non tempor mauris. Aliquam pharetra
+                                velit in
+                                vestibulum sollicitudin. Nulla mattis rhoncus tortor, sit amet egestas dolor pharetra
+                                at.
+                            </p>
+                        </div>
+
+                    </div>
+                    <!-- / .pricing__item -->
+
+                </div>
             </div>
+            <!-- / .row -->
         </div>
+        <!-- / .container -->
     </div>
-    <!-- / .container -->
-</div>
-<!-- / .site-wrapper -->
-
-
-<!-- TEAM
-============================== -->
-<div class="site-wrapper" id="team">
-    <div class="container">
-        <div class="row">
-        <div class="col-xs-12">
-
-            <!-- Heading -->
-            <h1 class="heading">
-                They've <span class="text-primary">made</span> this possible
-            </h1>
-
-            <!-- Sub heading -->
-            <p class="heading__sub">
-                A team of hard-working enthusiastic people who helped this product come to life.
-            </p>
-
-        </div>
-    </div>
-        <!-- / .row -->
-        <div class="row">
-        <div class="col-sm-3">
-
-            <!-- Team member -->
-            <div class="team__member">
-
-                <!-- Avatar -->
-                <div class="team-member__avatar team__member_chief">
-                    <img class="img-responsive" src="img/photo_1.jpg" alt="...">
-                </div>
-
-                <!-- Info -->
-                <h4 class="team-member__name">Игорь Сорокин</h4>
-
-                <p class="team-member__info">
-                    Руководитель проекта
-                </p>
-
-            </div>
-            <!-- / .team__member -->
-
-        </div>
-
-        <div class="col-sm-3">
-
-            <!-- Team member -->
-            <div class="team__member">
-
-                <!-- Avatar -->
-                <div class="team-member__avatar">
-                    <img class="img-responsive" src="img/photo_3.jpg" alt="...">
-                </div>
-
-                <!-- Info -->
-                <h4 class="team-member__name">Андрей Ботов</h4>
-
-                <p class="team-member__info">Архитектор</p>
-
-            </div>
-            <!-- / .team__member -->
-
-        </div>
-
-        <div class="col-sm-3">
-
-            <!-- Team member -->
-            <div class="team__member">
-
-                <!-- Avatar -->
-                <div class="team-member__avatar">
-                    <img class="img-responsive" src="img/photo_2.jpg" alt="...">
-                </div>
-
-                <!-- Info -->
-                <h4 class="team-member__name">Анастасия Тарасова</h4>
-
-                <p class="team-member__info">Художник</p>
-
-            </div>
-            <!-- / .team__member -->
-
-        </div>
-        <div class="col-sm-3">
-
-                <!-- Team member -->
-                <div class="team__member">
-
-                    <!-- Avatar -->
-                    <div class="team-member__avatar">
-                        <img class="img-responsive" src="img/photo_2.jpg" alt="...">
-                    </div>
-
-                    <!-- Info -->
-                    <h4 class="team-member__name">Ольга Руднева</h4>
-
-                    <p class="team-member__info">Менеджер проекта</p>
-                </div>
-                <!-- / .team__member -->
-
-            </div>
-    </div>
-        <div class="row">
-
-        <div class="col-sm-3">
-
-            <!-- Team member -->
-            <div class="team__member">
-
-                <!-- Avatar -->
-                <div class="team-member__avatar">
-                    <img class="img-responsive" src="img/photo_3.jpg" alt="...">
-                </div>
-
-                <!-- Info -->
-                <h4 class="team-member__name">Алексей Кашанин</h4>
-
-                <p class="team-member__info">Архитектор</p>
-            </div>
-            <!-- / .team__member -->
-
-        </div>
-
-        <div class="col-sm-3">
-
-            <!-- Team member -->
-            <div class="team__member">
-
-                <!-- Avatar -->
-                <div class="team-member__avatar">
-                    <img class="img-responsive" src="img/photo_2.jpg" alt="...">
-                </div>
-
-                <!-- Info -->
-                <h4 class="team-member__name">Анна Кашанина</h4>
-
-                <p class="team-member__info">Архитектор</p>
-            </div>
-            <!-- / .team__member -->
-
-        </div>
-
-        <div class="col-sm-3">
-
-            <!-- Team member -->
-            <div class="team__member">
-
-                <!-- Avatar -->
-                <div class="team-member__avatar">
-                    <img class="img-responsive" src="img/photo_2.jpg" alt="...">
-                </div>
-
-                <!-- Info -->
-                <h4 class="team-member__name">Мария Друзина</h4>
-
-                <p class="team-member__info">Программист</p>
-
-            </div>
-            <!-- / .team__member -->
-
-        </div>
-
-        <div class="col-sm-3">
-
-            <!-- Team member -->
-            <div class="team__member">
-
-                <!-- Avatar -->
-                <div class="team-member__avatar">
-                    <img class="img-responsive" src="img/photo_3.jpg" alt="...">
-                </div>
-
-                <!-- Info -->
-                <h4 class="team-member__name">Антон Хействер</h4>
-
-                <p class="team-member__info">Программист</p>
-
-            </div>
-            <!-- / .team__member -->
-
-        </div>
-    </div>
-        <!-- / .row -->
-    </div>
-<!-- / .container -->
-</div> <!-- / .site-wrapper -->
-
-
-<!-- PARTNERS
-============================== -->
-<div class="site-wrapper" id="partners">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-
-                <!-- Heading -->
-                <h1 class="heading">
-                    Наши <span class="text-primary">партнёры</span>
-                </h1>
-
-                <!-- Sub heading -->
-                <p class="heading__sub">
-                    Three pricing plans to fit a project of any size. Painless refund guaranteed.
-                </p>
-
-            </div>
-        </div>
-        <!-- / .row -->
-        <div class="row">
-            <div class="col-sm-4">
-
-                <!-- Pricing item -->
-                <div class="pricing__item">
-
-                    <!-- Price -->
-                    <div class="pricing-item__price">
-                        <img height="100" src="images/potanin.jpg" />
-                    </div>
-
-                    <!-- Pricing body -->
-                    <div class="pricing-item__body">
-                        <p class="pricing-item-body__content">
-                            Фонд проводит долгосрочные стипендиальные и грантовые программы, адресованные талантливым студентам и преподавателям ведущих государственных и негосударственных вузов России, музейным специалистам, профессионалам спортивной отрасли, специалистам по созданию и развитию эндаументов.
-                        </p>
-                    </div>
+    <!-- / .site-wrapper -->
+
+    <!-- CONTACT
+    ============================== -->
+    <div class="site-wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+
+                    <!-- Heading -->
+                    <h1 class="heading">
+                        Подпишитесь на нашу <span class="text-primary">рассылку</span>
+                    </h1>
+
+                    <!-- Sub heading -->
+                    <p class="heading__sub">
+                        Подписка на новости проекта. Не чаще одного раза в неделю.
+                    </p>
 
                 </div>
-                <!-- / .pricing__item -->
-
             </div>
-            <div class="col-sm-4">
-
-                <!-- Pricing item -->
-                <div class="pricing__item">
-
-                    <!-- Price -->
-                    <div class="pricing-item__price">
-                        <img height="100" src="images/mm.jpg" />
-                    </div>
-
-                    <!-- Pricing body -->
-                    <div class="pricing-item__body">
-                        <p class="pricing-item-body__content">
-                            Фонд выдает гранты сотрудникам музеев РФ на реализацию современных музейных проектов. Важная составляющая программы - семинар для победителей, дающий возможность познакомиться с новыми музейными технологиями, подходами и форматами.
-                        </p>
-                    </div>
-
-                </div>
-                <!-- / .pricing__item -->
-
-            </div>
-            <div class="col-sm-4">
-
-                <!-- Pricing item -->
-                <div class="pricing__item">
-
-                    <!-- Price -->
-                    <div class="pricing-item__price">
-                        <img height="100" src="images/gorod.png" />
-                    </div>
-
-                    <!-- Pricing body -->
-                    <div class="pricing-item__body">
-                        <p class="pricing-item-body__content">
-                            Vivamus posuere ut est at gravida. Pellentesque non tempor mauris. Aliquam pharetra velit in
-                            vestibulum sollicitudin. Nulla mattis rhoncus tortor, sit amet egestas dolor pharetra at.
-                        </p>
-                    </div>
-
-                </div>
-                <!-- / .pricing__item -->
-
-            </div>
-        </div>
-        <!-- / .row -->
-    </div>
-    <!-- / .container -->
-</div>
-<!-- / .site-wrapper -->
-
-
-
-<!-- CONTACT
-============================== -->
-<div class="site-wrapper" id="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12">
-
-                <!-- Heading -->
-                <h1 class="heading">
-                    Подпишитесь на нашу <span class="text-primary">рассылку</span>
-                </h1>
-
-                <!-- Sub heading -->
-                <p class="heading__sub">
-                    Подписка на новости проекта. Не чаще одного раза в неделю.
-                </p>
-
-            </div>
-        </div>
-        <!-- / .row -->
-        <div class="row">
-            <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
-                <!-- Begin MailChimp Signup Form -->
-                <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
-                <style type="text/css">
-                    #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
-                    /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
-                       We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-                </style>
-                <div id="mc_embed_signup">
-                    <form action="//oldsaratov.us10.list-manage.com/subscribe/post?u=49a6a3f1d330ca5bd92f5dd2b&amp;id=657809dbd8" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                        <div id="mc_embed_signup_scroll">
-                            <div class="mc-field-group">
-                                <label for="mce-EMAIL">Email
-                                </label>
-                                <input type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+            <!-- / .row -->
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
+                    <!-- Begin MailChimp Signup Form -->
+                    <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
+                    <style type="text/css">
+                        #mc_embed_signup {
+                            clear: left;
+                            font: 14px Helvetica, Arial, sans-serif;
+                        }
+                    </style>
+                    <div id="mc_embed_signup">
+                        <form action="//oldsaratov.us10.list-manage.com/subscribe/post?u=49a6a3f1d330ca5bd92f5dd2b&amp;id=657809dbd8"
+                              method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form"
+                              class="validate" target="_blank" novalidate>
+                            <div id="mc_embed_signup_scroll">
+                                <div class="mc-field-group form-group">
+                                    <label for="mce-EMAIL">Email</label>
+                                    <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL">
+                                </div>
+                                <div id="mce-responses" class="clear">
+                                    <div class="response" id="mce-error-response" style="display:none"></div>
+                                    <div class="response" id="mce-success-response" style="display:none"></div>
+                                </div>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;">
+                                    <input type="text" name="b_49a6a3f1d330ca5bd92f5dd2b_657809dbd8" tabindex="-1" value="">
+                                </div>
+                                <div class="clear">
+                                    <input type="submit" value="Подписаться" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-primary">
+                                </div>
                             </div>
-                            <div id="mce-responses" class="clear">
-                                <div class="response" id="mce-error-response" style="display:none"></div>
-                                <div class="response" id="mce-success-response" style="display:none"></div>
-                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_49a6a3f1d330ca5bd92f5dd2b_657809dbd8" tabindex="-1" value=""></div>
-                            <div class="clear"><input type="submit" value="Подписаться" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
+                    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
+                    <script type='text/javascript'>(function ($) {
+                        window.fnames = new Array();
+                        window.ftypes = new Array();
+                        fnames[0] = 'EMAIL';
+                        ftypes[0] = 'email';
+                    }(jQuery));
+                    var $mcj = jQuery.noConflict(true);</script>
+                    <!--End mc_embed_signup-->
                 </div>
-                <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
-                <!--End mc_embed_signup-->
             </div>
+            <!-- / .row -->
         </div>
-        <!-- / .row -->
+        <!-- / .container -->
     </div>
-    <!-- / .container -->
+    <!-- / .site-wrapper -->
 </div>
-<!-- / .site-wrapper -->
-
-
-<!-- FOOTER
-============================== -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-12 col-sm-6">
-                2015 &copy; Саратовская крепость. Рассредоточенный музей истории города.
-            </div>
-            <div class="col-xs col-sm-6">
-                <div class="social__items">
-                    <a href="https://www.facebook.com/saratovkrepost" class="social__item">
-                        <i class="fa fa-facebook"></i>
-                    </a>
-                    <a href="https://instagram.com/sar_krepost/" class="social__item">
-                        <i class="fa fa-instagram"></i>
-                    </a>
-                </div>
-                <!-- / .social__links -->
-            </div>
-        </div>
-    </div>
-</footer>
-
+<!-- / #fullpage -->
 
 <!-- JavaScript
 ================================================== -->
 
 <!-- JS Global -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js"></script>
 <script src="js/bootstrap/bootstrap.min.js"></script>
 
 <!-- JS Plugins -->
-<script src="js/plugins/jquery.parallax-1.1.3.js"></script>
-<script src="js/plugins/smoothscroll.js"></script>
-<script src="js/plugins/jquery.waypoints.min.js"></script>
+<script src="js/plugins/jquery.slimscroll.min.js"></script>
+<script src="js/plugins/jquery.fullPage.min.js"></script>
+<script src="js/plugins/jquery.backstretch.min.js"></script>
 <script src="js/plugins/imagesloaded.pkgd.min.js"></script>
 <script src="js/plugins/isotope.pkgd.min.js"></script>
 <script src="js/plugins/lightbox.min.js"></script>
-<script src="js/plugins/contact.js"></script>
-<script src="js/plugins/google-maps.js"></script>
 
 <!-- JS Custom -->
-<script src="js/custom_classic.js"></script>
+<script src="js/custom_sliding.js"></script>
 <script src="js/custom.js"></script>
-
 
 </body>
 </html>
