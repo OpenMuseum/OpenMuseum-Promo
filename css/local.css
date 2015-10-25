@@ -1,0 +1,51 @@
+@font-face {
+    font-family: Dustypro; /* Гарнитура шрифта */
+    src: url("../fonts/DustyPro.ttf"); /* Путь к файлу со шрифтом */
+}
+
+@font-face {
+    font-family: Frab; /* Гарнитура шрифта */
+    src: url("../fonts/FRABKIT.TTF"); /* Путь к файлу со шрифтом */
+}
+
+
+.header {
+    font-family: Dustypro;
+}
+
+.header-description {
+    font-family: Frab;
+    font-size: 32px;
+}
+
+.sliding-image .site-wrapper[data-anchor="welcome"] {
+    background-image: url(../img/bg-pattern.png), url(../images/base.jpg);
+}
+.sliding-image .site-wrapper[data-anchor="idea"] {
+    background-image: url(../img/bg-pattern.png), url(../img/screen-bg_2.jpg);
+}
+.sliding-image .site-wrapper[data-anchor="projects"] {
+    background-image: url(../img/bg-pattern.png), url(../img/screen-bg_3.jpg);
+}
+.sliding-image .site-wrapper[data-anchor="team"] {
+    background-image: url(../img/bg-pattern.png), url(../img/screen-bg_5.jpg);
+}
+.sliding-image .site-wrapper[data-anchor="partners"] {
+    background-image: url(../img/bg-pattern.png), url(../img/screen-bg_6.jpg);
+}
+.sliding-image .site-wrapper[data-anchor="contact"] {
+    background-image: url(../img/bg-pattern.png), url(../img/screen-bg_7.jpg);
+}
+
+.site-wrapper__slide_1 {
+    background-image: url(../img/bg-pattern.png), url(../images/portals.jpg);
+}
+.site-wrapper__slide_2 {
+    background-image: url(../img/bg-pattern.png), url(../images/krepost-2.jpg);
+}
+.site-wrapper__slide_3 {
+    background-image: url(../img/bg-pattern.png), url(../images/krepost-1.jpg);
+}
+.site-wrapper__slide_4 {
+    background-image: url(../img/bg-pattern.png), url(../img/screen-bg_10.jpg);
+}
