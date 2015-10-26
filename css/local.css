@@ -5,11 +5,11 @@
 
 @font-face {
     font-family: Frab; /* Гарнитура шрифта */
-    src: url("../fonts/FRABKIT.TTF"); /* Путь к файлу со шрифтом */
+    src: url("../fonts/FRABK.TTF"); /* Путь к файлу со шрифтом */
 }
 
 
-.header {
+.brand-font {
     font-family: Dustypro;
 }
 
@@ -48,4 +48,16 @@
 }
 .site-wrapper__slide_4 {
     background-image: url(../img/bg-pattern.png), url(../img/screen-bg_10.jpg);
+}
+
+.m-t {
+    margin-top: 80px;
+}
+
+.team__member {
+    margin-top: 0px;
+}
+
+.heading + .heading__sub {
+    margin: -40px auto 30px;
 }
