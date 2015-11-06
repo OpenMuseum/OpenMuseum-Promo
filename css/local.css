@@ -33,6 +33,9 @@
 .sliding-image .site-wrapper[data-anchor="partners"] {
     background-image: url(../img/bg-pattern.png), url(../img/screen-bg_6.jpg);
 }
+.sliding-image .site-wrapper[data-anchor="media"] {
+    background-image: url(../img/bg-pattern.png), url(../img/screen-bg_1.jpg);
+}
 .sliding-image .site-wrapper[data-anchor="contact"] {
     background-image: url(../img/bg-pattern.png), url(../img/screen-bg_7.jpg);
 }
@@ -60,4 +63,22 @@
 
 .heading + .heading__sub {
     margin: -40px auto 30px;
+}
+
+div.press-wall {
+    background-color: rgba(0, 0, 0, 0.3); /* Цвет фона и значение прозрачности */
+    padding: 10px; /* Поля вокруг текста */
+    color: #fff; /* Цвет текста */
+    margin-bottom: 50px;
+}
+
+.other-slides {
+    position: absolute;
+    margin-left: -200px;
+    left: 50%;
+    z-index: 4;
+    bottom: 45px;
+}
+
+.other-slides.bottom {
 }
